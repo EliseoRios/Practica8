@@ -6,6 +6,7 @@
  
  <body>
   <section>
+  <form method="POST" action="CapturarDatos.php">
    <h1>Ingresar datos:</h1>
    <?php
     $Arreglo = array("Nombre","Telefono","Celular","Direccion","Colonia","CP");
@@ -28,6 +29,8 @@
 	   $creartabla = new CrearTabla();
 	   $creartabla->DatosGuardados = $DatosGuardados;
 	   $creartabla->Dibujarla();
+	   
+	   echo "<a href='Opciones.php'><button><img src='imagenes/Opciones.jpg' class='opciones'>OPCIONES</img></button></a>";
 	  ?>
 	</aside>
  </body>

@@ -1,9 +1,9 @@
 aside
 {
   position:absolute;
-  top:25;
-  right:50;
-  width:200px;
+  top:20;
+  left:90;
+  width:150px;
   vertical-align: middle;
 }
 
@@ -20,13 +20,31 @@ body
 }
 section
 {
- color:white;
+ color:black;
  position:absolute;
- left:850;
+ left:600;
+ top:160;
 }
 
 h1
 {
  color:#7ED6EE;
  font-family:impact;
+}
+
+h2
+{ 
+ color:#7ED6EE;
+}
+
+img.opciones
+{
+ width: 165px; 
+ height: 50px;
+}
+
+button
+{
+ position:absolute;
+ top:350;
 }

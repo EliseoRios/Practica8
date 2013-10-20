@@ -38,8 +38,30 @@
 	}
   }
   
-  public function Insertar()
+  public function Insertar($Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP)
   {
+   try
+   {
+    $conexion = new Conexion();
+    if(!$conexion->Abrir())
+    {
+     throw new Exception ($conexion->getError());
+    }
+    else
+    {
+     $sql="INSERT INTO contacto (Nombre,Telefono,Celular,Direccion,Colonia,CP)VALUES ('".$Nombre."','".$Telefono."','".$Celular."','".$Direccion."','".$Colonia."','".$CP."');";
+
+     $resultado = $conexion->mysql->query($sql);
+	 $conexion->cerrar();
+	 echo "<script>alert(\"Insercion exitosa\");</script>";
+	 echo "<a href='Directorio.php'>REGRESAR...</a>";
+	 return $resultado;
+    }
+   }
+   catch (Exception $e)
+   {
+    return false;
+   }
   }
  }
 ?>
