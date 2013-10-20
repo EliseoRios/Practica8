@@ -1,0 +1,32 @@
+aside
+{
+  position:absolute;
+  top:25;
+  right:50;
+  width:200px;
+  vertical-align: middle;
+}
+
+table
+{
+	box-shadow: 10px 10px 5px #888888;
+	border:1px solid #000000;
+    background-color:#A4F0D7;
+}
+
+body
+{
+ background-image:url(imagenes/fondo2.jpg);
+}
+section
+{
+ color:white;
+ position:absolute;
+ left:850;
+}
+
+h1
+{
+ color:#7ED6EE;
+ font-family:impact;
+}

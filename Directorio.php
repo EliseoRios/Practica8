@@ -1,34 +1,34 @@
 <html>
  <head>
   <title>Directorio</title>
-  <link href="" rel="stylesheet" type="text/css"/>
+  <link href="Insertar.css" rel="stylesheet" type="text/css"/>
  </head>
  
  <body>
- <a href="InicioSesion.php">
-  <button>
-   <img src="imagenes/CerrarSesion.png" width="70" height="70"/>
-    <?php
-    require_once("Sesion.php");
-    $IrSesion = new Sesion();
-    $IrSesion->CerrarSesion();
-   ?>
-  </button>
- </a>
- <br/>
-  
-   <center>
-    <a href="imagenes/save.ico">
-    <button>
-     <img src="nuevo.jpg" width="500" height="350"/>
-    </button>
-    </a>
-	<a href="imagenes/preview.ico">
-	 <button>
-	  <image src="Mostrar.jpg" width="500" height="350">
-	 </button>
-	</a>
+  <section>
+   <h1>Ingresar datos:</h1>
+   <?php
+    $Arreglo = array("Nombre","Telefono","Celular","Direccion","Colonia","CP");
 	
-   </center>
+    for($i=0;$i<6;$i++)
+	{
+	 echo "<label>".$Arreglo[$i]."</label></br>";
+	 echo "<input type='text' name='txt".$Arreglo[$i]."'/></br>";
+	}
+   ?>
+   <input type="submit" name="entrar"/>
+  </section>
+	
+	<aside>
+      <?php
+	   require_once("Acciones.php");
+	   require_once("CrearTabla.php");
+	   $acciones = new Acciones();
+	   $DatosGuardados = $acciones->MostrarTodos();
+	   $creartabla = new CrearTabla();
+	   $creartabla->DatosGuardados = $DatosGuardados;
+	   $creartabla->Dibujarla();
+	  ?>
+	</aside>
  </body>
 </html>

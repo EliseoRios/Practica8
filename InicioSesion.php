@@ -1,18 +1,21 @@
 <html>
  <head>
   <title> Inicio Seci&oacuten </title>
-  <link href="" ref="stylesheet" type="text/css"/>
+  <link href="Inicio.css" rel="stylesheet" type="text/css"/>
  </head>
  
- <body>
+ <body >
+  <div id="cabeza">
   <header>
-  <h1>BIENVEVIDO!</h1>
+  <h1>BIENVENIDO!</h1>
    <p>
       Esta es una p&aacutegina realizada para uso b&aacutesico de base de datos. </br>
       Todos los datos almacenados aqu&iacute ser&aacuten tratados a nivel local.
    </p>
   </header>
+  </div>
   
+  <div id="seccion">
   <section>
   <form method="POST" action="ValidarIngreso.php">
    <fieldset>
@@ -29,9 +32,10 @@
     </fieldset>
    </form>
   </section>
-
+  </div>
+  
   <footer>
-   <img src="imagenes/pie.jpg"/>
+   <img src=""/>
   </footer>
  </body>
 <html>

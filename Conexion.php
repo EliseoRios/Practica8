@@ -1,18 +1,18 @@
 <?php
-  class conexion
+  class Conexion
   {
-   $mysql;
-   $Error;
+   public $mysql;
+   private $Error;
 
    public function Abrir()
    {
      try
 	 {
-	  this->$mysql = new mysqli("localhost","root","","programacion");
+	  $this->mysql = new mysqli("localhost","root","","programacion");
 
-	  if($this->mysql->connecterrno)
+	  if($this->mysql->connect_errno)
 	  {
-	    thow new Exception ("Fallo al conectar a MySql: (".$this->mysql->connect_errno.")".$this->mysql->connect_error;
+	    throw new Exception("Fallo al conectar a MySQL: (" . $this->mysql->connect_errno . ") " . $this->mysql->connect_error);//tal error por tal cosa
 	  }
 	  return true;
 	 }
@@ -23,14 +23,14 @@
 	 }
    }
 
-   public MandarError()
+   public function MandarError()
    {
     return $this->Error;
-   }
+   }//no sirve aqui
   
    public function Cerrar()
    {
-     $mysql->close();
-   }//no sirve aqui dentro
+     $this->mysql->close();
+   }
   }
 ?>

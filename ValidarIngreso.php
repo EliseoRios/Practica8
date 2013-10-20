@@ -1,7 +1,7 @@
 <html>
  <head>
   <title> Validando... </title>
-  <link href="" ref="stylesheet" type="text/css"/>
+  <link href="Inicio.css" rel="stylesheet" type="text/css"/>
  </head>
  
  <body>
