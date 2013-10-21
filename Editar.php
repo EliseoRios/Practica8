@@ -1,14 +1,18 @@
 <html>
- <head>
-  <title>Directorio</title>
-  <link href="Insertar.css" rel="stylesheet" type="text/css"/>
- </head>
- 
- <body>
+ <form method="POST" action="DatosNuevos.php">
   <section>
-  <form method="POST" action="CapturarDatos.php">
    <h1>Ingresar datos:</h1>
    <?php
+   
+  if(isset($_GET['id']))
+  {
+   $Id = $_GET['id'];
+  }
+   
+   class Editar
+  {
+   public $Id;
+  }
     $Arreglo = array("Nombre","Telefono","Celular","Direccion","Colonia","CP");
 	
     for($i=0;$i<6;$i++)
@@ -18,10 +22,6 @@
 	}
    ?>
    <input type="submit" name="entrar"/>
-   </section>
-	
-	<aside>
-	 <a href='Opciones.php'><img src='imagenes/contactos.png' class='opciones'/></a>
-	</aside>
- </body>
+  </section>
+ </form>
 </html>
