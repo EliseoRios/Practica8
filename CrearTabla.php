@@ -13,12 +13,7 @@
 	   echo "<th>Nombre</th>";
 	   echo "<th>Tel&eacutefono</th>";
 	   echo "<th>Opciones</th>";
-	   //echo "<th colspan='3'>Opciones</th>";
   	  echo "</tr>";
-	  
-	 //$btnEditar = "<a href='Update.php'><input type='button' name='btnEditar' value='Editar' /></a>";
-     //$btnEliminar = "<a href='Delete.php'><input type='button' name='Eliminar' value='Eliminar' /></a>";
-     //$btnVer = "<a href='See.php'><input type='button' name='btnVer' value='Ver'/></a>";
 	  
      foreach($this->DatosGuardados as $contacto){
       echo '<tr>';

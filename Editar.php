@@ -18,7 +18,7 @@
     for($i=0;$i<6;$i++)
 	{
 	 echo "<label>".$Arreglo[$i]."</label></br>";
-	 echo "<input type='text' name='txt".$Arreglo[$i]."'/></br>";
+	 echo "<input type='text' value='".""."' name='txt".$Arreglo[$i]."'/></br>";
 	}
    ?>
    <input type="submit" name="entrar"/>
