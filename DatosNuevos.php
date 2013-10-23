@@ -6,12 +6,12 @@
   
   <body>
    <?php
-   require_once("Acciones.php");
-
-   function ids()
-   {
-    $id = ID;
-   }
+    require_once("Acciones.php");
+	
+    /*if(isset ($_GET['id']))
+    {
+      $IdContacto  = $_GET['id'];
+    }*/
    
    $Nombre=$_POST["txtNombre"];
    $Telefono=$_POST["txtTelefono"];
@@ -23,12 +23,12 @@
    if(empty($Nombre) || empty($Telefono) || empty($Celular) || empty ($Direccion) || empty($Colonia) || empty($CP))
    {
      echo "<script>alert(\"Llene TODOS los espacios.\");</script>";
-     echo "<a href='Directorio.php'>REGRESAR...</a>";
+     echo "<a href='Editar.php'>REGRESAR...</a>";
    }
    else
    {
     $acciones = new Acciones();
-    $acciones->EditarContacto($Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP);
+    $acciones->EditarContacto($IdContacto,$Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP);
    }
   ?>
   </body>

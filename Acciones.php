@@ -52,7 +52,7 @@
      $sql="INSERT INTO contacto (Nombre,Telefono,Celular,Direccion,Colonia,CP)VALUES ('".$Nombre."','".$Telefono."','".$Celular."','".$Direccion."','".$Colonia."','".$CP."');";
 
      $resultado = $conexion->mysql->query($sql);
-	 $conexion->cerrar();
+	 $conexion->Cerrar();
 	 echo "<script>alert(\"Insercion exitosa\");</script>";
 	 echo "<a href='Directorio.php'>REGRESAR...</a>";
 	 return $resultado;
@@ -64,11 +64,33 @@
    }
   }
   
-  public function VerContacto()
+  public function VerContacto($IdContacto)
   {
     try
     {
-      throw new Exception ($conexion->getError());
+	  $conexion = new Conexion();
+	  $Almacenados = array();
+	  
+	  if(!$conexion->Abrir())
+	  { 
+	    throw new Exception ($conexion->getError());
+	  }
+      else
+	  { 
+	    $sql = "SELECT * FROM contacto WHERE id='".$IdContacto."';";
+		$resultado = $conexion->mysql->query($sql);
+		
+		if ($resultado->num_rows > 0) 
+        {
+	     while($fila = $resultado->fetch_assoc())
+         {
+          $Almacenados[] = $fila;
+         }
+        }
+		
+		$conexion->Cerrar();
+		return $Almacenados;
+	  }
     }
 	catch (Exception $e)
 	{
@@ -103,18 +125,19 @@
    
   }
   
-  public function EditarContacto($Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP)
+  public function EditarContacto($IdContacto,$Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP)
   {
    try
    {
     $conexion = new Conexion();
+	
     if(!$conexion->Abrir())
     {
      throw new Exception ($conexion->getError());
     }
 	else
     {
-     $sql="UPDATE contacto SET(Nombre='".$Nombre."',Telefono='".$Telefono."',Celular='".$Celular."',Direccion='".$Direccion."',Colonia='".$Colonia."',CP='".$CP."')WHERE Id='".$Id."';";
+     $sql="UPDATE contacto SET(Nombre='".$Nombre."',Telefono='".$Telefono."',Celular='".$Celular."',Direccion='".$Direccion."',Colonia='".$Colonia."',CP='".$CP."')WHERE Id='".$IdContacto."';";
 
      $resultado = $conexion->mysql->query($sql);
 	 $conexion->cerrar();

@@ -8,11 +8,14 @@
   <?php
 	   require_once("Acciones.php");
 	   require_once("CrearTabla.php");
+	   
 	   $acciones = new Acciones();
 	   $DatosGuardados = $acciones->MostrarTodos();
+	   
 	   $creartabla = new CrearTabla();
 	   $creartabla->DatosGuardados = $DatosGuardados;
 	   $creartabla->Dibujarla();
+	   echo '</br><a href="Directorio.php">Regresar...</a><br>';
   ?>
   </body>
  <form>
