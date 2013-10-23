@@ -1,11 +1,21 @@
-<?php
- require_once("Acciones.php");
- $acciones = new Acciones();
+<html>
+ <head>
+    <link href="Cargar.css" rel="stylesheet" type="text/css"/>
+ </head>
 
-  if(isset($_GET['id']))
-  {
-   $Id = $_GET['id'];
-  }
+ <body>
+  <form>
+   <?php
+    require_once("Acciones.php");
+    $acciones = new Acciones();
+
+    if(isset($_GET['id']))
+    {
+     $Id = $_GET['id'];
+    }
   
-  $acciones->EliminarContacto($Id);
+    $acciones->EliminarContacto($Id);
 ?>
+  </form>
+ </body>
+<html>
