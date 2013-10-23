@@ -1,4 +1,8 @@
 <html>
+  <head>
+    <link href="Cargar.css" rel="stylesheet" type="text/css"/>
+  </head>
+  
  <form method="POST" action="DatosNuevos.php">
   <section>
    <h1>Ingresar nuevos datos:</h1>
@@ -16,7 +20,6 @@
 	
     $DatosGuardados = $acciones->VerContacto($Id);
     $informacionContacto->MostrarInformacion($DatosGuardados);
-	
    ?>
    </br>
    <input type="submit" name="entrar"/>

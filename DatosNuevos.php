@@ -6,7 +6,12 @@
   
   <body>
    <?php
-   require_once("Acciones.php");
+    require_once("Acciones.php");
+	
+    /*if(isset ($_GET['id']))
+    {
+      $IdContacto  = $_GET['id'];
+    }*/
    
    $Nombre=$_POST["txtNombre"];
    $Telefono=$_POST["txtTelefono"];
@@ -23,7 +28,7 @@
    else
    {
     $acciones = new Acciones();
-    $acciones->EditarContacto($Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP);
+    $acciones->EditarContacto($IdContacto,$Nombre,$Telefono,$Celular,$Direccion,$Colonia,$CP);
    }
   ?>
   </body>
