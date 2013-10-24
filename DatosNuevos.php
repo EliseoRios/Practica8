@@ -8,10 +8,10 @@
    <?php
     require_once("Acciones.php");
 	
-    /*if(isset ($_GET['id']))
+    if(isset ($_POST['id']))
     {
-      $IdContacto  = $_GET['id'];
-    }*/
+      $IdContacto  = $_POST['id'];
+    }
    
    $Nombre=$_POST["txtNombre"];
    $Telefono=$_POST["txtTelefono"];

@@ -19,7 +19,7 @@
     $DatosGuardados = $acciones->VerContacto($Id);
     $informacionContacto->MostrarInformacion($DatosGuardados);
     echo '</br><a href="Opciones.php">Regresar...</a><br>';
-    echo '</br><a href="Directorio.php">P&aacutegina principal..</a>';
+    echo '</br><a href="InicioSesion.php">Cerrar Sesi&oacuten</a>';
   ?>
   </form>
  </body>

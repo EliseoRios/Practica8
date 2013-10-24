@@ -18,12 +18,14 @@
      {
        $Id  = $_GET['id'];
      }
-	
+	 
      $DatosGuardados = $acciones->VerContacto($Id);
      $informacionContacto->MostrarInformacion($DatosGuardados);
     ?>
-    </br>
-    <input type="submit" name="entrar"/>
+     </br>
+	 <input type="hidden" name="id" value="<?php echo $Id;?>"/>
+     <input type="submit" name="entrar"/>
+	
      </br><a href="Opciones.php">Regresar...</a><br>
      </br><a href="Directorio.php">P&aacutegina principal..</a>
    </section>

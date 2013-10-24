@@ -4,7 +4,7 @@
 </head>
  <form>
  <body>
-   <h1>INTRODUZCA EL ID DEL DEL CONTACTO PARA CONTINUAR</h1>
+   <h1>SELECCIONE LAS TAREAS QUE DESEA REALIZAR</h1>
   <?php
 	   require_once("Acciones.php");
 	   require_once("CrearTabla.php");
@@ -15,7 +15,9 @@
 	   $creartabla = new CrearTabla();
 	   $creartabla->DatosGuardados = $DatosGuardados;
 	   $creartabla->Dibujarla();
-	   echo '</br><a href="Directorio.php">Regresar...</a><br>';
+	   
+	   echo '</br><a href="Directorio.php">NUEVO</a><br>';
+	   echo '</br><a href="InicioSesion.php">Cerrar Sesi&oacuten</a><br>';
   ?>
   </body>
  <form>
