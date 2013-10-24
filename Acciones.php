@@ -54,7 +54,10 @@
      $resultado = $conexion->mysql->query($sql);
 	 $conexion->Cerrar();
 	 echo "<script>alert(\"Insercion exitosa\");</script>";
-	 echo "<a href='Directorio.php'>REGRESAR...</a>";
+	 
+	 echo "<a href='Opciones.php'>Ir a tabla...</a>";	
+     echo '</br>';	 
+	 echo "<a href='Directorio.php'>Ingresar otro...</a>";
 	 return $resultado;
     }
    }
@@ -114,7 +117,8 @@
      $resultado = $conexion->mysql->query($sql);
 	 $conexion->cerrar();
 	 echo "<script>alert(\"Eliminacion exitosa\");</script>";
-	 echo "<a href='Directorio.php'>REGRESAR...</a>";
+	 //echo "<a href='Opciones.php'>REGRESAR...</a>";
+	 header("Location:Opciones.php");
 	 return $resultado;
     }
    }
@@ -137,12 +141,13 @@
     }
 	else
     {
-     $sql="UPDATE contacto SET(Nombre='".$Nombre."',Telefono='".$Telefono."',Celular='".$Celular."',Direccion='".$Direccion."',Colonia='".$Colonia."',CP='".$CP."')WHERE Id='".$IdContacto."';";
-
+     $sql="UPDATE contacto SET Nombre='".$Nombre."',Telefono='".$Telefono."',Celular='".$Celular."',Direccion='".$Direccion."',Colonia='".$Colonia."',CP='".$CP."' WHERE Id='".$IdContacto."';";
+	 //var_dump($sql);
      $resultado = $conexion->mysql->query($sql);
 	 $conexion->cerrar();
 	 echo "<script>alert(\"Edicion exitosa\");</script>";
-	 echo "<a href='Directorio.php'>REGRESAR...</a>";
+	 //echo "<a href='Opciones.php'>REGRESAR...</a>";
+	 header("Location:Opciones.php");
 	 return $resultado;
     }
 	

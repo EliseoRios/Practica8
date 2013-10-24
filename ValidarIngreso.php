@@ -17,7 +17,7 @@
        $IrSesion = new Sesion();
 	   $IrSesion->NombreSesion($codigo);
 	   	
-	   header('Location:Directorio.php');
+	   header('Location:Opciones.php');
 	   unset($_POST['txtCodigo']);
 	   unset($_POST['txtContrasenia']);
   	 }
